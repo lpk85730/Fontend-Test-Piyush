@@ -2,6 +2,8 @@ import 'package:demo_project/core/constants/string_constants.dart';
 import 'package:demo_project/core/constants/theme_constants.dart';
 import 'package:demo_project/core/presentation/widgets/notification_icon.dart';
 import 'package:demo_project/feature/post_details/controller/post_controller.dart';
+import 'package:demo_project/feature/post_details/presentation/widgets/comment_box.dart';
+import 'package:demo_project/feature/post_details/presentation/widgets/comment_section/post_comment_section.dart';
 import 'package:demo_project/feature/post_details/presentation/widgets/post_details.dart';
 import 'package:demo_project/feature/post_details/presentation/widgets/post_header.dart';
 import 'package:demo_project/feature/post_details/presentation/widgets/post_images.dart';
@@ -34,13 +36,25 @@ class PostDetailPage extends StatelessWidget {
         ),
         actions: const [NotificationIcon()],
       ),
-      body: ListView(
+      body: Column(
         children: [
-          const PostHeader(),
-          const PostDetails(),
-          PostTags(postTagsList: postController.postTagsList),
-          PostImages(imgList: postController.imageList),
-          const PostUtilitySection(),
+          Expanded(
+            child: ListView(
+              children: [
+                const PostHeader(),
+                const PostDetails(),
+                PostTags(postTagsList: postController.postTagsList),
+                PostImages(imgList: postController.imageList),
+                const PostUtilitySection(),
+                const Divider(
+                  height: 2,
+                  color: ThemeColors.clrWhite50,
+                ),
+                const PostCommentSection()
+              ],
+            ),
+          ),
+          const CommentBox()
         ],
       ),
     );

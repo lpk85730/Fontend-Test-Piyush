@@ -30,6 +30,7 @@ class ActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 25,
       margin: (margin != null) ? margin : EdgeInsets.zero,
       child: isLarge
           ? Row(children: [Expanded(child: getElevatedButton())])

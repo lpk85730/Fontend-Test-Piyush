@@ -11,6 +11,7 @@ class ThemeColors {
   static const Color clrWhite50 = Color(0xFFF7F8FA);
   static const Color clrBorder = Color(0xFFCED3DE);
   static const Color clrTag = Color(0xFF596A86);
+  static const Color clrSend = Color(0xFF919EB6);
   static const Color clrTeal = Color(0xFF01B99F);
 }
 

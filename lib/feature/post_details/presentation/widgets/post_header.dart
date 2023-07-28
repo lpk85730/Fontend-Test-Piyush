@@ -1,4 +1,5 @@
 import 'package:demo_project/core/constants/image_constants.dart';
+import 'package:demo_project/core/constants/string_constants.dart';
 import 'package:demo_project/core/constants/theme_constants.dart';
 import 'package:demo_project/core/presentation/widgets/action_button.dart';
 import 'package:demo_project/core/presentation/widgets/dot_widget.dart';
@@ -24,7 +25,7 @@ class PostHeader extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    '안녕 나 응애',
+                    StringConstants.strUserName1,
                     style: TextStyle(
                       color: ThemeColors.clrBlack50,
                       fontSize: 14,
@@ -70,6 +71,7 @@ class PostHeader extends StatelessWidget {
           const Spacer(),
           ActionButton(
             onPressed: () {},
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             title: "팔로우",
           )
         ],
