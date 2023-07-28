@@ -10,6 +10,7 @@ import 'package:demo_project/feature/post_details/presentation/widgets/post_imag
 import 'package:demo_project/feature/post_details/presentation/widgets/post_tags.dart';
 import 'package:demo_project/feature/post_details/presentation/widgets/post_utility_section.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class PostDetailPage extends StatelessWidget {
@@ -21,9 +22,10 @@ class PostDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
-          Icons.arrow_back_ios_new_rounded,
+        leading: const IconButton(
+          icon: Icon(Icons.arrow_back_ios_new_rounded),
           color: ThemeColors.clrBlack50,
+          onPressed: SystemNavigator.pop,
         ),
         centerTitle: true,
         title: const Text(
@@ -36,26 +38,29 @@ class PostDetailPage extends StatelessWidget {
         ),
         actions: const [NotificationIcon()],
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView(
-              children: [
-                const PostHeader(),
-                const PostDetails(),
-                PostTags(postTagsList: postController.postTagsList),
-                PostImages(imgList: postController.imageList),
-                const PostUtilitySection(),
-                const Divider(
-                  height: 2,
-                  color: ThemeColors.clrWhite50,
-                ),
-                const PostCommentSection()
-              ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView(
+                children: [
+                  const PostHeader(),
+                  const PostDetails(),
+                  PostTags(postTagsList: postController.postTagsList),
+                  PostImages(imgList: postController.imageList),
+                  const PostUtilitySection(),
+                  Container(
+                    height: 2,
+                    width: double.maxFinite,
+                    color: ThemeColors.clrWhite50,
+                  ),
+                  const PostCommentSection()
+                ],
+              ),
             ),
-          ),
-          const CommentBox()
-        ],
+            const CommentBox()
+          ],
+        ),
       ),
     );
   }

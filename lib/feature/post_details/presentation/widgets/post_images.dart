@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:demo_project/core/constants/theme_constants.dart';
+import 'package:demo_project/core/presentation/widgets/image_placeholder.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -77,14 +79,10 @@ class PostImages extends StatelessWidget {
         if (loadingProgress == null) {
           return child;
         }
-        return Container(
-          padding: const EdgeInsets.all(8),
-          alignment: Alignment.center,
-          child: const CircularProgressIndicator(color: ThemeColors.clrTeal),
-        );
+        return const ImagePlaceHolder();
       },
       width: double.maxFinite,
-      fit: BoxFit.fill,
+      fit: kIsWeb ? BoxFit.contain : BoxFit.cover,
     );
   }
 }

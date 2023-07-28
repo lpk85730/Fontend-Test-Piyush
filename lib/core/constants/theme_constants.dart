@@ -13,6 +13,8 @@ class ThemeColors {
   static const Color clrTag = Color(0xFF596A86);
   static const Color clrSend = Color(0xFF919EB6);
   static const Color clrTeal = Color(0xFF01B99F);
+  static const Color clrPlaceHolderBG = Color(0xFFECEEF2);
+  static const Color clrPlaceHolderIcon = Color(0xFF5A6B87);
 }
 
 class ThemeFonts {
