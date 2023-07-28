@@ -1,0 +1,24 @@
+import 'package:demo_project/core/constants/string_constants.dart';
+import 'package:demo_project/core/constants/theme_constants.dart';
+import 'package:demo_project/core/domain/method/methods.dart';
+import 'package:demo_project/feature/post_details/presentation/pages/post_detail_page.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    preLoadImages(context);
+    return GetMaterialApp(
+      title: StringConstants.appName,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: ThemeColors.clrWhite,
+        fontFamily: ThemeFonts.notoSans,
+      ),
+      home: const PostDetailPage(),
+    );
+  }
+}
