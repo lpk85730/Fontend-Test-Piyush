@@ -15,10 +15,11 @@ class MyApp extends StatelessWidget {
       title: StringConstants.appName,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        appBarTheme: AppTheme().appBarTheme(),
         scaffoldBackgroundColor: ThemeColors.clrWhite,
         fontFamily: ThemeFonts.notoSans,
       ),
-      home: const PostDetailPage(),
+      home: PostDetailPage(),
     );
   }
 }

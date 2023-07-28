@@ -11,8 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
   get: ^4.6.5
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -31,3 +31,6 @@ flutter:
     - family: NotoSans
       fonts:
         - asset: assets/fonts/NotoSans-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
